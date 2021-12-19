@@ -5,7 +5,7 @@ This dotfiles repository is intended to be used for Linux distributions under WS
 ## My environment
 
 - WSL2
-  - Debian bullseye
+  - Debian Bullseye
 
 ## How to use
 
