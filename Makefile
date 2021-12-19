@@ -1,3 +1,5 @@
+# ref: https://github.com/b4b4r07/dotfiles/blob/master/Makefile
+
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 CANDIDATES := $(wildcard .??*)
 EXCLUSIONS := .DS_Store .git .gitmodules .dccache .config
