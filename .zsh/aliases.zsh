@@ -11,7 +11,7 @@ alias deit='d exec -it'
 alias dlogs='d logs'
 
 # Docker compose
-alias dc='d compose'
+alias dc='docker-compose'
 alias dcup='dc up'
 alias dcupd='dc up -d'
 alias dcdown='dc down'
