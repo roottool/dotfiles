@@ -14,5 +14,8 @@ autoload -Uz _zinit
 
 SCRIPT_DIR=$HOME/.zsh
 source "$SCRIPT_DIR/aliases.zsh"
+source "$SCRIPT_DIR/zinit.zsh"
+# zinit self-update
+# zinit update --parallel
 
 eval "$(starship init zsh)"
