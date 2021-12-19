@@ -1,0 +1,10 @@
+[include]
+  path = ~/.gitconfig_local
+[core]
+  editor = code --wait
+  excludesfile = ~/.gitignore
+  preloadindex = true
+[commit]
+	gpgSign = true
+[gpg]
+	program = gpg2
