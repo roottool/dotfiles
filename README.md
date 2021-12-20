@@ -9,6 +9,30 @@ This dotfiles repository is intended to be used for Linux distributions under WS
 
 ## How to use
 
-```bash
-make install
-```
+1. Clone this repository
+2. Move to the cloned repository
+3. Execute the command
+    ```bash
+    make install
+    ```
+4. Create `~/.gitconfig_local`
+
+   Example
+    ```toml
+    [user]
+      name = roottool
+      email = sample@example.com
+      signingkey = THIS15EXAMPLE
+    ```
+5. Create `~/local.zsh`
+
+   Example
+    ```zsh
+    # BROWSER
+    export BROWSER='Your browser  execution file path'
+
+    # PATH
+    export WINDOWS_VSCODE='Your VS Code folder path within Windows'
+    export PATH=$WINDOWS_VSCODE/bin:$PATH
+    ```
+6. Reboot your distribution
