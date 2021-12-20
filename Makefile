@@ -18,13 +18,14 @@ install: ## Create symlink to home directory.
 
 
 clean: ## Remove symlink.
+	unlink ${HOME}/.starship || true && \
+	unlink ${HOME}/.zsh || true && \
 	unlink ${HOME}/.gitconfig || true && \
 	unlink ${HOME}/.gitignore || true && \
 	unlink ${HOME}/.profile || true && \
 	unlink ${HOME}/.zprofile || true && \
 	unlink ${HOME}/.zshenv || true && \
-	unlink ${HOME}/.zshrc || true && \
-	unlink ${HOME}/.starship/starship.toml || true
+	unlink ${HOME}/.zshrc || true
 
 help: ## Self-documented Makefile.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
