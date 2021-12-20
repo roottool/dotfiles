@@ -12,14 +12,11 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
-# Zinit
+# Init Zsh
 SCRIPT_DIR=$HOME/.zsh
 source "$SCRIPT_DIR/aliases.zsh"
+source "$HOME/local.zsh"
 source "$SCRIPT_DIR/zinit.zsh"
-# zinit self-update
-# zinit update --parallel
 
-# Install or update starship.
-# sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 export STARSHIP_CONFIG=~/.starship/config.toml
 eval "$(starship init zsh)"
