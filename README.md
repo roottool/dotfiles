@@ -4,8 +4,14 @@ This dotfiles repository is intended to be used for Linux distributions under WS
 
 ## My environment
 
+- Windows 11
 - WSL2
   - Debian Bullseye
+
+## Components
+
+- starship
+- zinit
 
 ## How to use
 
@@ -20,7 +26,7 @@ This dotfiles repository is intended to be used for Linux distributions under WS
    Example
     ```toml
     [user]
-      name = roottool
+      name = sample
       email = sample@example.com
       signingkey = THIS15EXAMPLE
     ```
