@@ -10,6 +10,7 @@ This dotfiles repository is intended to be used for Linux distributions under WS
 
 ## Components
 
+- Linuxbrew
 - starship
 - zinit
 
