@@ -1,4 +1,9 @@
-# My dotfiles
+<div align="center">
+  <h1>roottool's dotfiles</h1>
+  <img alt="Sample" src="https://user-images.githubusercontent.com/11808736/146920735-d30c270e-992f-441f-82cf-9dfdce51f613.png"/>
+</div>
+
+## ℹ️ Overview
 
 This dotfiles repository is intended to be used for Linux distributions under WSL2.
 
