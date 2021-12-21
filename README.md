@@ -15,9 +15,9 @@ This dotfiles repository is intended to be used for Linux distributions under WS
 
 ## ⚙️ Components
 
-- Linuxbrew
-- starship
-- zinit
+- https://github.com/Homebrew/brew
+- https://github.com/starship/starship
+- https://github.com/zdharma-continuum/zinit
 
 ## 🔰 How to use
 
