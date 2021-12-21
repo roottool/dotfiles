@@ -2,19 +2,19 @@
 
 This dotfiles repository is intended to be used for Linux distributions under WSL2.
 
-## My environment
+## 🖥️ My environment
 
 - Windows 11
 - WSL2
   - Debian Bullseye
 
-## Components
+## ⚙️ Components
 
 - Linuxbrew
 - starship
 - zinit
 
-## How to use
+## 🔰 How to use
 
 1. Clone this repository
 2. Move to the cloned repository
@@ -25,7 +25,7 @@ This dotfiles repository is intended to be used for Linux distributions under WS
 4. Create `~/.gitconfig_local`
 
    Example
-    ```toml
+    ```
     [user]
       name = sample
       email = sample@example.com
