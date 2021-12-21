@@ -36,7 +36,7 @@ This dotfiles repository is intended to be used for Linux distributions under WS
    Example
     ```zsh
     # BROWSER
-    export BROWSER='Your browser  execution file path'
+    export BROWSER='Your browser execution file path'
 
     # PATH
     export WINDOWS_VSCODE='Your VS Code folder path within Windows'
