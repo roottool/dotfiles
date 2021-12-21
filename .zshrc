@@ -18,5 +18,7 @@ source "$SCRIPT_DIR/aliases.zsh"
 source "$HOME/local.zsh"
 source "$SCRIPT_DIR/zinit.zsh"
 
+autoload -U compinit && compinit
+
 export STARSHIP_CONFIG=~/.starship/config.toml
 eval "$(starship init zsh)"
