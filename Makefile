@@ -16,7 +16,6 @@ install: ## Create symlink to home directory.
 	@echo ''
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
-
 clean: ## Remove symlink.
 	unlink ${HOME}/.starship || true && \
 	unlink ${HOME}/.zsh || true && \
