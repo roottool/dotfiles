@@ -1,4 +1,4 @@
-# A glance at the new for-syntax – load all of the above
+# A glance at the new for-syntax - load all of the above
 # plugins with a single command. For more information see:
 # https://zdharma-continuum.github.io/zinit/wiki/For-Syntax/
 zinit light-mode for \
@@ -14,8 +14,8 @@ zinit light junegunn/fzf
 
 # One other binary release, it needs renaming from `docker-compose-Linux-x86_64`.
 # This is done by ice-mod `mv'{from} -> {to}'. There are multiple packages per
-# single version, for OS X, Linux and Windows – so ice-mod `bpick' is used to
-# select Linux package – in this case this is actually not needed, Zinit will
+# single version, for OS X, Linux and Windows - so ice-mod `bpick' is used to
+# select Linux package - in this case this is actually not needed, Zinit will
 # grep operating system name and architecture automatically when there's no `bpick'.
 zinit ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
 zinit load docker/compose
