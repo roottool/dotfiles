@@ -23,3 +23,7 @@ autoload -U compinit && compinit
 
 export STARSHIP_CONFIG=~/.starship/config.toml
 eval "$(starship init zsh)"
+
+# fnm
+export PATH=/home/roottool/.fnm:$PATH
+eval "`fnm env`"
