@@ -17,9 +17,6 @@ SCRIPT_DIR=$HOME/.zsh
 source "$SCRIPT_DIR/aliases.zsh"
 source "$HOME/local.zsh"
 source "$SCRIPT_DIR/zinit.zsh"
-source "$HOME/.local/share/zinit/plugins/tj---git-extras/etc/git-extras-completion.zsh"
-
-autoload -U compinit && compinit
 
 export STARSHIP_CONFIG=~/.starship/config.toml
 eval "$(starship init zsh)"
