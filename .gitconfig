@@ -2,7 +2,6 @@
   path = ~/.gitconfig_local
 [core]
   editor = code --wait
-	excludesFile = ~/.gitignore
   preloadindex = true
 [commit]
 	gpgSign = true
