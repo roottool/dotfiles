@@ -2,16 +2,21 @@
 
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 CANDIDATES := $(wildcard .??*)
-EXCLUSIONS := .DS_Store .git .gitmodules .dccache .editorconfig
+EXCLUSIONS := .DS_Store .config .git .gitmodules .dccache .editorconfig
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
+CONFIG_LIST := $(wildcard .config/**)
 
 .DEFAULT_GOAL := help
 
 list: ## Show dot files in this repo.
+	@$(foreach val, $(CONFIG_LIST), /bin/ls -dF $(val);)
 	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
 
 install: ## Create symlink to home directory.
 	@echo 'Copyright (c) 2013-2015 BABAROT All Rights Reserved.'
+	@echo '==> Start to deploy config files to home config directory.'
+	@echo ''
+	@$(foreach val, $(CONFIG_LIST), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 	@echo '==> Start to deploy dotfiles to home directory.'
 	@echo ''
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
