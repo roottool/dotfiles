@@ -22,7 +22,8 @@ install: ## Create symlink to home directory.
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 
 clean: ## Remove symlink.
-	unlink ${HOME}/.starship || true \
+	unlink ${HOME}/.config/git || true \
+	&& unlink ${HOME}/.config/starship.toml || true \
 	&& unlink ${HOME}/.zsh || true \
 	&& unlink ${HOME}/.gitconfig || true \
 	&& unlink ${HOME}/.gitignore || true \
