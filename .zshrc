@@ -18,9 +18,9 @@ source "$SCRIPT_DIR/aliases.zsh"
 source "$HOME/local.zsh"
 source "$SCRIPT_DIR/zinit.zsh"
 
-export STARSHIP_CONFIG=~/.starship/config.toml
-eval "$(starship init zsh)"
-
-# fnm
+# Init fnm
 export PATH=/home/roottool/.fnm:$PATH
 eval "`fnm env`"
+
+# Init starship
+eval "$(starship init zsh)"
