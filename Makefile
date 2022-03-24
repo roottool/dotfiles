@@ -17,6 +17,7 @@ install: ## Create symlink to home directory.
 	@echo '==> Start to deploy config files to home config directory.'
 	@echo ''
 	@$(foreach val, $(CONFIG_LIST), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
+	@echo ''
 	@echo '==> Start to deploy dotfiles to home directory.'
 	@echo ''
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
