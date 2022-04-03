@@ -2,6 +2,9 @@
 export EDITOR=code
 export SUDO_EDITOR=nano
 
+# Init tty
+export GPG_TTY=$(tty)
+
 # LANGUAGE
 result=$(ls /usr/share/i18n/locales/ | grep ja)
 if [ -n "$result" ]; then
