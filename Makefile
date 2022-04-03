@@ -2,7 +2,7 @@
 
 DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
 CANDIDATES := $(wildcard .??*)
-EXCLUSIONS := .DS_Store .config .git .gitmodules .dccache .editorconfig
+EXCLUSIONS := .DS_Store .config .dccache .editorconfig .git .github .gitmodules
 DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 CONFIG_LIST := $(wildcard .config/**)
 
