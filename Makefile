@@ -27,7 +27,6 @@ clean: ## Remove symlink.
 	&& unlink ${HOME}/.config/starship.toml || true \
 	&& unlink ${HOME}/.zsh || true \
 	&& unlink ${HOME}/.gitconfig || true \
-	&& unlink ${HOME}/.gitignore || true \
 	&& unlink ${HOME}/.profile || true \
 	&& unlink ${HOME}/.zprofile || true \
 	&& unlink ${HOME}/.zshenv || true \
