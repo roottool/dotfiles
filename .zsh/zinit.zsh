@@ -17,7 +17,7 @@ zinit light junegunn/fzf
 # single version, for OS X, Linux and Windows - so ice-mod `bpick' is used to
 # select Linux package - in this case this is actually not needed, Zinit will
 # grep operating system name and architecture automatically when there's no `bpick'.
-zinit ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
+zinit ice from"gh-r" as"program" mv"docker* -> docker-compose"
 zinit load docker/compose
 
 # Scripts that are built at install (there's single default make target, "install",
