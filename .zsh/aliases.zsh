@@ -11,9 +11,10 @@ alias deit='d exec -it'
 alias dlogs='d logs'
 
 # Docker compose
-alias dc='docker-compose'
+alias dc='d compose'
 alias dcup='dc up'
 alias dcupd='dc up -d'
 alias dcdown='dc down'
+alias docker-compose=dc
 
 alias pbcopy='xsel --clipboard --input'
