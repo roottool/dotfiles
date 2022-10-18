@@ -4,6 +4,8 @@
   editor = code --wait
   preloadindex = true
 [commit]
-	gpgSign = true
+  gpgSign = true
 [gpg]
-	program = gpg2
+  program = gpg2
+[rebase]
+  updateRefs = true
