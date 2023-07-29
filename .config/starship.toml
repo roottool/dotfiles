@@ -25,7 +25,7 @@ format = "via $symbol [${ram}\\(${ram_pct}\\)]($style) "
 style = "bold dimmed green"
 
 [nodejs]
-format = "via [ $version](bold green) "
+format = "via [🍏 $version](bold green) "
 
 [package]
 disabled = true
