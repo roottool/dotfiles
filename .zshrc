@@ -16,8 +16,8 @@ autoload -Uz _zinit
 SCRIPT_DIR=$HOME/.zsh
 source "$SCRIPT_DIR/aliases.zsh"
 source "$SCRIPT_DIR/history.zsh"
-source "$HOME/local.zsh"
 source "$SCRIPT_DIR/zinit.zsh"
+source "$HOME/local.zsh"
 
 # Init starship
 eval "$(starship init zsh)"
