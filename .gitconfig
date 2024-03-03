@@ -8,4 +8,9 @@
 [gpg]
   program = gpg2
 [rebase]
+  abbreviateCommands = true
+  autostash = true
+  autosquash = true
   updateRefs = true
+[init]
+	defaultBranch = main
