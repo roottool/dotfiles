@@ -12,3 +12,5 @@ if [ -n "$result" ]; then
 else
   export LANG=en_US.UTF-8
 fi
+
+. "$HOME/.cargo/env"
