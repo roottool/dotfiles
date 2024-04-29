@@ -44,7 +44,7 @@ jobs:
             markdown:
               - '**/*.md'
       - name: test
-        run: echo ${{ setup.outputs.markdown_files }}
+        run: echo ${{ steps.filter.outputs.markdown_files }}
 
   markdown-lint:
     name: Markdown lint
