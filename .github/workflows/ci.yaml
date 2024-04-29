@@ -23,6 +23,7 @@ jobs:
       pull-requests: write
     outputs:
       markdown: ${{ steps.filter.outputs.markdown }}
+      markdown_files: ${{ steps.filter.outputs.markdown_files }}
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Assign yourself to this PR
@@ -60,7 +61,7 @@ jobs:
       - name: Lint
         uses: DavidAnson/markdownlint-cli2-action@b4c9feab76d8025d1e83c653fa3990936df0e6c8 #v16.0.0
         with:
-          globs: '**/*.md'
+          globs: ${{ needs.setup.outputs.markdown_files }}
 
   gatekeeper:
     name: Merge Gatekeeper
