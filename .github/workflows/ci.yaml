@@ -57,15 +57,10 @@ jobs:
           sparse-checkout: |
             ${{ needs.setup.outputs.markdown_files }}
           sparse-checkout-cone-mode: false
-      - name: Test
-        run: echo ${{ needs.setup.outputs.markdown_files }}
-      - name: Test2
-        run: ls
       - name: Lint
         uses: DavidAnson/markdownlint-cli2-action@b4c9feab76d8025d1e83c653fa3990936df0e6c8 #v16.0.0
         with:
-          globs: ${{ needs.setup.outputs.markdown_files }}
-          separator: ' '
+          globs: '**/*.md'
 
   gatekeeper:
     name: Merge Gatekeeper
