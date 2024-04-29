@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
   <h1>roottool's dotfiles</h1>
   <img alt="Sample" src="https://user-images.githubusercontent.com/11808736/146920735-d30c270e-992f-441f-82cf-9dfdce51f613.png"/>
@@ -15,9 +16,9 @@ This dotfiles repository is intended to be used for Linux distributions under WS
 
 ## ⚙️ Required Components
 
-- https://github.com/Homebrew/brew
-- https://github.com/starship/starship
-- https://github.com/zdharma-continuum/zinit
+- [Homebrew/brew](https://github.com/Homebrew/brew)
+- [starship/starship](https://github.com/starship/starship)
+- [zdharma-continuum/zinit](https://github.com/zdharma-continuum/zinit)
 
 ## 🔰 How to use
 
