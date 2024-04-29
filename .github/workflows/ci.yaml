@@ -19,8 +19,6 @@ jobs:
     name: Setup
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    permissions:
-      pull-requests: read
     outputs:
       markdown: ${{ steps.filter.outputs.markdown }}
     if: ${{ !github.event.pull_request.draft }}
@@ -40,6 +38,8 @@ jobs:
     name: Markdown lint
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      pull-requests: write
     needs: [setup]
     if: ${{ needs.setup.outputs.markdown == 'true' }}
     steps:
