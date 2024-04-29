@@ -1,0 +1,74 @@
+name: CI
+run-name: '${{ github.workflow }} (${{ github.ref_name }}): ${{ github.event.pull_request.title }}'
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+
+env:
+  NODE_VERSION: '18'
+
+# Declare default permissions as read only.
+permissions: read-all
+
+jobs:
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      pull-requests: write
+    outputs:
+      markdown: ${{ steps.filter.outputs.markdown }}
+      markdown_files: ${{ steps.filter.outputs.markdown_files }}
+    if: ${{ !github.event.pull_request.draft }}
+    steps:
+      - name: Assign yourself to this PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.pull_request.number }}
+          ASSIGNEE: ${{ github.event.pull_request.user.login }}
+        if: ${{ github.event.pull_request.user.type != 'Bot' && toJSON(github.event.pull_request.assignees) == '[]' }}
+        run: gh pr edit $NUMBER --add-assignee $ASSIGNEE
+      - name: Checkout Repository
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+      - name: Check diff targets by path filters
+        uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
+        id: filter
+        with:
+          list-files: shell
+          filters: |
+            markdown:
+              - '**/*.md'
+
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [setup]
+    if: ${{ needs.setup.outputs.markdown == 'true' }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        with:
+          sparse-checkout: |
+            ${{ needs.setup.outputs.markdown_files }}
+          sparse-checkout-cone-mode: false
+      - name: Lint
+        uses: DavidAnson/markdownlint-cli2-action@b4c9feab76d8025d1e83c653fa3990936df0e6c8 #v16.0.0
+        with:
+          globs: ${{ needs.setup.outputs.markdown_files }}
+
+  gatekeeper:
+    name: Merge Gatekeeper
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [markdown-lint]
+    if: ${{ !(failure() || contains(needs.*.result, 'cancelled')) }}
+    steps:
+      - name: Exit with success
+        run: exit 0

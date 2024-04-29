@@ -1,0 +1,21 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"config:recommended",
+		"schedule:daily",
+		":enableVulnerabilityAlertsWithLabel(security)"
+	],
+	"labels": ["dependencies"],
+	"timezone": "Asia/Tokyo",
+	"prHourlyLimit": 4,
+	"prConcurrentLimit": 10,
+	"configMigration": true,
+	"packageRules": [
+		{
+			"groupName": "GitHub Action digests",
+			"matchDepTypes": ["action"],
+			"pinDigests": true,
+			"automerge": true
+		}
+	]
+}
