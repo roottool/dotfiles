@@ -19,5 +19,13 @@ source "$SCRIPT_DIR/history.zsh"
 source "$SCRIPT_DIR/zinit.zsh"
 source "$HOME/local.zsh"
 
+# Init eza
+if type brew &>/dev/null; then
+  export FPATH="/home/linuxbrew/.linuxbrew/bin/eza/completions/zsh:$FPATH"
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+  autoload -Uz compinit
+  compinit
+fi
+
 # Init starship
 eval "$(starship init zsh)"
