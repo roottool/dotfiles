@@ -29,3 +29,6 @@ fi
 
 # Init starship
 eval "$(starship init zsh)"
+
+# Init mise
+eval "$(/home/roottool/.local/bin/mise activate zsh)"
