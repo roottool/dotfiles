@@ -24,7 +24,8 @@ install: ## Create symlink to home directory.
 
 clean: ## Remove symlink.
 	unlink ${HOME}/.config/git || true \
-	&& unlink ${HOME}/.config/sheldon/plugins.toml || true \
+	&& unlink ${HOME}/.config/mise || true \
+	&& unlink ${HOME}/.config/sheldon || true \
 	&& unlink ${HOME}/.config/starship.toml || true \
 	&& unlink ${HOME}/.gitconfig || true \
 	&& unlink ${HOME}/.profile || true \
