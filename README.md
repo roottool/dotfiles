@@ -17,25 +17,27 @@ This dotfiles repository is intended to be used for Linux distributions under WS
 ## ⚙️ Required Components
 
 - [Homebrew/brew](https://brew.sh)
+- [chezmoi](https://www.chezmoi.io)
 - [sheldon](https://sheldon.cli.rs)
 - [starship/starship](https://starship.rs)
 
 ## 🔰 How to use
 
 1. Clone this repository
-2. Move to the cloned repository
-3. Execute the command
-
-    ```bash
-    make install
-    ```
-
-4. Create `~/.gitconfig_local`
+2. Create `~/.gitconfig_local`
 
    The example is [here](example/.gitconfig_local).
 
-5. Create `~/local.zsh`
+3. Create `~/local.zsh`
 
    The example is [here](example/local.zsh).
+
+4. Move to the cloned repository
+5. Execute the install script
+
+    ```bash
+    chmod +x install-packages.sh
+    ./install-packages.sh
+    ```
 
 6. Reboot your distribution
