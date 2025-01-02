@@ -15,5 +15,8 @@ log/
 *.log
 
 # VS Code
+## Workspace file for local
+local.code-workspace
+
 # Snyk Vulnerability Scanner Extension
 .dccache
