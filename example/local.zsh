@@ -13,8 +13,4 @@ if [[ -n $(eval $updateCheckCmd) ]]; then
   brew upgrade
   brew autoremove
   brew cleanup
-
-  # Update by zinit and plugins
-  zinit self-update
-  zinit update --parallel
 fi
