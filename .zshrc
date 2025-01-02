@@ -6,7 +6,10 @@ source "$SCRIPT_DIR/history.zsh"
 source "$HOME/local.zsh"
 
 ## Homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+brewPath="which brew"
+if [[ -n $(eval $brewPath) ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 ## sheldon
 eval "$(sheldon source)"
