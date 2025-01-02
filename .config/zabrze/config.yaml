@@ -1,0 +1,93 @@
+abbrevs:
+  # Git
+  - name: git
+    abbr: g
+    snippet: git
+  - name: git checkout
+    abbr: ch
+    snippet: checkout
+    context: '^git\s'
+    global: true
+  - name: git commit
+    abbr: c
+    snippet: commit
+    context: '^git\s'
+    global: true
+  - name: git commit -m
+    abbr: cm
+    snippet: commit -m '{}'
+    context: '^git\s'
+    global: true
+  - name: git commit --amend '-S'
+    abbr: ca
+    snippet: commit --amend '-S'
+    context: '^git\s'
+    global: true
+  - name: Fetch current branch name
+    abbr: B
+    snippet: $(git symbolic-ref --short HEAD)
+    evaluate: true
+    context: '^git\s'
+    global: true
+  - name: git pull
+    abbr: pl
+    snippet: pull
+    context: '^git\s'
+    global: true
+  - name: git push
+    abbr: ph
+    snippet: push
+    context: '^git\s'
+    global: true
+  - name: git push origin
+    abbr: pho
+    snippet: push origin
+    context: '^git\s'
+    global: true
+  - name: git push --force-with-lease --force-if-includes
+    abbr: gpf
+    snippet: git push --force-with-lease --force-if-includes
+    global: true
+
+  # Docker
+  - name: docker
+    abbr: d
+    snippet: docker
+  - name: docker ps
+    abbr: dps
+    snippet: docker ps
+    global: true
+  - name: docker exec -it
+    abbr: deit
+    snippet: docker exec -it
+    global: true
+  - name: docker logs
+    abbr: dlogs
+    snippet: docker logs
+    global: true
+  - name: docker images
+    abbr: dimgs
+    snippet: docker images
+    global: true
+  - name: docker rmi `dimgs -aq`
+    abbr: drminone
+    snippet: docker rmi `dimgs -aq`
+    global: true
+
+  # Docker compose
+  - name: docker compose
+    abbr: dc
+    snippet: docker compose
+    global: true
+  - name: docker compose up
+    abbr: dcup
+    snippet: docker compose up
+    global: true
+  - name: docker compose up -d
+    abbr: dcupd
+    snippet: docker compose up -d
+    global: true
+  - name: docker compose down
+    abbr: dcdown
+    snippet: docker compose down
+    global: true
