@@ -33,6 +33,8 @@ jobs:
         run: gh pr edit $NUMBER --add-assignee $ASSIGNEE
       - name: Checkout Repository
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        with:
+          persist-credentials: false
       - name: Check diff targets by path filters
         uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
         id: filter
@@ -52,6 +54,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
         with:
+          persist-credentials: false
           sparse-checkout: |
             ${{ needs.setup.outputs.markdown_files }}
           sparse-checkout-cone-mode: false
