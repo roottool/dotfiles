@@ -67,11 +67,24 @@ jobs:
         with:
           globs: ${{ needs.setup.outputs.markdown_files }}
 
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    needs: [setup]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        with:
+          persist-credentials: false
+      - name: Install dotfiles
+        run: sh -c "$(curl -fsLS chezmoi.io/get)" -- init --source . --apply
+
   gatekeeper:
     name: Merge Gatekeeper
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: [markdown-lint]
+    needs: [markdown-lint, test]
     if: ${{ !(failure() || contains(needs.*.result, 'cancelled')) }}
     steps:
       - name: Exit with success
