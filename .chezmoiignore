@@ -1,6 +1,7 @@
 .github/
 examples/
 
+install-packages.sh
 LICENSE
 README.md
 
