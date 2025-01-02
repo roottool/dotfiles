@@ -36,6 +36,9 @@ apply = ['defer']
 github = 'zdharma-continuum/fast-syntax-highlighting'
 apply = ['defer']
 
+[plugins.zabrze]
+inline = 'eval "$(zabrze init --bind-keys)"'
+
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
 

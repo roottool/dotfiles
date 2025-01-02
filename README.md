@@ -12,13 +12,13 @@ This dotfiles repository is intended to be used for Linux distributions under WS
 
 - Windows 11
 - WSL2
-  - Debian Bullseye
+  - Debian 12 (bookworm)
 
 ## ⚙️ Required Components
 
-- [Homebrew/brew](https://github.com/Homebrew/brew)
-- [starship/starship](https://github.com/starship/starship)
-- [zdharma-continuum/zinit](https://github.com/zdharma-continuum/zinit)
+- [Homebrew/brew](https://brew.sh)
+- [sheldon](https://sheldon.cli.rs)
+- [starship/starship](https://starship.rs)
 
 ## 🔰 How to use
 
