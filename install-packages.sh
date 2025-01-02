@@ -69,6 +69,9 @@ sudo apt install -y \
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew bundle --file ./Brewfile
 
+# Change the default shell to zsh
+chsh -s /usr/bin/zsh
+
 # Set up by Chezmoi
 chezmoi init --source . --apply
 
