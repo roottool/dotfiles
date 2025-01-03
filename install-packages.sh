@@ -11,13 +11,13 @@ fi
 
 # Function to check the OS
 check_os() {
-  if [[ -f /etc/debian_version ]]; then
-    DISTRO="debian"
-  elif [[ -f /etc/lsb-release ]]; then
-    . /etc/lsb-release
-    if [[ "$DISTRIB_ID" == "Ubuntu" ]]; then
-      DISTRO="ubuntu"
-    fi
+  . /etc/os-release
+  if [[ "$ID" == "debian" ]]; then
+    DISTRO_ID="debian"
+    DISTRO_NAME="Debian"
+  elif [[ "$ID" == "ubuntu" ]]; then
+    DISTRO_ID="ubuntu"
+    DISTRO_NAME="Ubuntu"
   else
     echo "This script can only be run on Debian or Ubuntu."
     exit 1
@@ -44,15 +44,15 @@ sudo apt install -y \
 # Install Docker
 ## Add Docker's official GPG key:
 sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL "https://download.docker.com/linux/$DISTRO/gpg" -o /etc/apt/keyrings/docker.asc
+sudo curl -fsSL "https://download.docker.com/linux/$DISTRO_ID/gpg" -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 
 ## Add the repository to Apt sources:
 echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] "https://download.docker.com/linux/$DISTRO" \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] "https://download.docker.com/linux/$DISTRO_ID" \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] "https://download.docker.com/linux/$DISTRO_ID" $(. /etc/os-release && echo "$VERSION_CODENAME") stable"
 # Install Docker packages and Docker compose
 sudo apt update
 sudo apt install -y \
@@ -70,6 +70,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew bundle --file ./Brewfile
 
 # Change the default shell to zsh
+sudo sh -c "echo '/home/linuxbrew/.linuxbrew/bin/zsh' >> /etc/shells"
 chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
 
 # Set up by Chezmoi
@@ -78,5 +79,4 @@ chezmoi init --source . --apply
 # Create the flag file to indicate the script has been executed
 touch "$FLAG_FILE"
 
-DISTRO_NAME=$(tr '[:lower:]' '[:upper:]' <<< ${DISTRO:0:1})${DISTRO:1}
 echo "Installation completed successfully on $DISTRO_NAME."
