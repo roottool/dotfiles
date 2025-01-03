@@ -1,12 +1,12 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
   <h1>roottool's dotfiles</h1>
-  <img alt="Sample" src="https://user-images.githubusercontent.com/11808736/146920735-d30c270e-992f-441f-82cf-9dfdce51f613.png"/>
+  <img alt="Sample" src="https://github.com/user-attachments/assets/9b6a17d3-101c-4a0f-bbf0-d59f1536eb86"/>
 </div>
 
 ## ℹ️ Overview
 
-This dotfiles repository is intended to be used for Linux distributions under WSL2.
+This dotfiles repository is intended to be used for Debian or Ubuntu under WSL2.
 
 ## 🖥️ My environment
 
@@ -14,12 +14,14 @@ This dotfiles repository is intended to be used for Linux distributions under WS
 - WSL2
   - Debian 12 (bookworm)
 
-## ⚙️ Required Components
+## ⚙️ Included Components
 
 - [Homebrew/brew](https://brew.sh)
 - [chezmoi](https://www.chezmoi.io)
 - [sheldon](https://sheldon.cli.rs)
 - [starship/starship](https://starship.rs)
+- [mise](https://mise.jdx.dev)
+- [Docker](https://www.docker.com)
 
 ## 🔰 How to use
 
