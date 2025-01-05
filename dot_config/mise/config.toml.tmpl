@@ -2,6 +2,8 @@
 node = "lts"
 pnpm = "latest"
 bun = "latest"
+{{ if (eq .chezmoi.username "roottool") }}
 deno = "latest"
 
 rust = "latest"
+{{ end }}

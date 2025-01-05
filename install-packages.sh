@@ -74,7 +74,7 @@ sudo sh -c "echo '/home/linuxbrew/.linuxbrew/bin/zsh' >> /etc/shells"
 chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
 
 # Set up by Chezmoi
-chezmoi init --source . --apply
+chezmoi init --source-path . --apply
 
 # Create the flag file to indicate the script has been executed
 touch "$FLAG_FILE"
