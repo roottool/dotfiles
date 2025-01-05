@@ -91,7 +91,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Install dotfiles
-        run: sh -c "$(curl -fsLS chezmoi.io/get)" -- init --source . --apply
+        run: sh -c "$(curl -fsLS chezmoi.io/get)" -- init --source-path . --apply
 
   gatekeeper:
     name: Merge Gatekeeper
