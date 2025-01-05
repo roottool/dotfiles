@@ -1,6 +1,7 @@
 .github/
 examples/
 
+.shellcheckrc
 install-packages.sh
 LICENSE
 README.md

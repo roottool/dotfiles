@@ -1,3 +1,5 @@
+# shellcheck disable=SC2148
+
 # eza
 alias ll="eza -l -h -@ -mU --icons --git --time-style=long-iso --color=automatic --group-directories-first"
 alias l="ll -aa"

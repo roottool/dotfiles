@@ -67,11 +67,24 @@ jobs:
         with:
           globs: ${{ needs.setup.outputs.markdown_files }}
 
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [setup]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+        with:
+          persist-credentials: false
+      - name: ShellCheck
+        run: find . -type f \( -name 'dot_z*' -o -name '*.sh' -o -name '*.zsh' \) | grep -Ev 'examples/*' | xargs shellcheck
+
   test:
     name: Test
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: [setup]
+    needs: [lint]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4

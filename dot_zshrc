@@ -1,3 +1,6 @@
+# shellcheck source=/dev/null
+# shellcheck disable=SC2148,SC1090
+
 # Initialization
 ##  Zsh
 SCRIPT_DIR=$HOME/.zsh
@@ -7,7 +10,7 @@ source "$HOME/local.zsh"
 
 ## Homebrew
 brewPath="which brew"
-if [[ -n $(eval $brewPath) ]]; then
+if [[ -n $(eval "$brewPath") ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
