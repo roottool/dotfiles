@@ -1,3 +1,5 @@
+# shellcheck disable=SC2148
+
 # EDITOR
 export EDITOR=code
 export SUDO_EDITOR=nano
