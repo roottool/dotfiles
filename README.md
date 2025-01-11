@@ -43,3 +43,20 @@ This dotfiles repository is intended to be used for Debian or Ubuntu under WSL2.
     ```
 
 6. Reboot your distribution
+7. Make a GPG key for GitHub.
+
+   If you want to manipulate Git in the GUI within VS Code, do the following.
+
+8. Download [Gpg4win](https://www.gpg4win.org/)
+9. Create `~/.gnupg/gpg-agent.conf`
+
+    ```bash
+    touch ~/.gnupg/gpg-agent.conf
+    gpg-connect-agent reloadagent /bye
+    ```
+
+10. Reboot a gpg agent
+
+    ```bash
+    gpg-connect-agent reloadagent /bye
+    ```
