@@ -28,11 +28,11 @@ This dotfiles repository is intended to be used for Debian or Ubuntu under WSL2.
 1. Clone this repository
 2. Create `~/.gitconfig_local`
 
-   The example is [here](example/.gitconfig_local).
+   The example is [`example/.gitconfig_local`](example/.gitconfig_local).
 
 3. Create `~/local.zsh`
 
-   The example is [here](example/local.zsh).
+   The example is [`example/local.zsh`](example/local.zsh).
 
 4. Move to the cloned repository
 5. Execute the install script

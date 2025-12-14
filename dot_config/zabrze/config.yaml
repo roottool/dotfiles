@@ -3,6 +3,16 @@ abbrevs:
   - name: git
     abbr: g
     snippet: git
+  - name: git branch
+    abbr: b
+    snippet: branch
+    context: '^git\s'
+    global: true
+  - name: git branch -D
+    abbr: bd
+    snippet: branch -D
+    context: '^git\s'
+    global: true
   - name: git checkout
     abbr: ch
     snippet: checkout
@@ -90,4 +100,24 @@ abbrevs:
   - name: docker compose down
     abbr: dcdown
     snippet: docker compose down
+    global: true
+
+  # Docker
+  - name: pnpm
+    abbr: pn
+    snippet: pnpm
+  - name: pnpm install
+    abbr: i
+    snippet: install
+    context: '^pnpm\s'
+    global: true
+
+  # Bun
+  - name: bun
+    abbr: bn
+    snippet: bun
+  - name: bun install
+    abbr: i
+    snippet: install
+    context: '^bun\s'
     global: true

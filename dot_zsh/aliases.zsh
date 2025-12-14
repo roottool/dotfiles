@@ -7,4 +7,7 @@ alias l="ll -aa"
 # Docker compose
 alias docker-compose=dc
 
+# Delete merged branches
+alias g-delete-merged-branches='git branch --merged | grep -v "*" | grep -v "^+" | xargs git branch -d'
+
 alias pbcopy='xsel --clipboard --input'

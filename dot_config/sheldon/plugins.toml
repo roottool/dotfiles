@@ -44,3 +44,6 @@ inline = 'eval "$(starship init zsh)"'
 
 [plugins.mise]
 inline = 'eval "$(mise activate zsh)"'
+
+[plugins.ni]
+github = "azu/ni.zsh"
