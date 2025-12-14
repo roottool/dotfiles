@@ -111,6 +111,36 @@ abbrevs:
     snippet: install
     context: '^pnpm\s'
     global: true
+  - name: pnpm add
+    abbr: a
+    snippet: add
+    context: '^pnpm\s'
+    global: true
+  - name: pnpm add -D
+    abbr: ad
+    snippet: add -D
+    context: '^pnpm\s'
+    global: true
+  - name: pnpm remove
+    abbr: rm
+    snippet: remove
+    context: '^pnpm\s'
+    global: true
+  - name: pnpm run
+    abbr: r
+    snippet: run
+    context: '^pnpm\s'
+    global: true
+  - name: pnpm dlx
+    abbr: d
+    snippet: dlx
+    context: '^pnpm\s'
+    global: true
+  - name: pnpm exec
+    abbr: e
+    snippet: exec
+    context: '^pnpm\s'
+    global: true
 
   # Bun
   - name: bun
@@ -121,3 +151,26 @@ abbrevs:
     snippet: install
     context: '^bun\s'
     global: true
+  - name: bun add
+    abbr: a
+    snippet: add
+    context: '^bun\s'
+    global: true
+  - name: bun install
+    abbr: ad
+    snippet: add -D
+    context: '^bun\s'
+    global: true
+  - name: bun remove
+    abbr: rm
+    snippet: remove
+    context: '^bun\s'
+    global: true
+  - name: bun run
+    abbr: r
+    snippet: run
+    context: '^bun\s'
+    global: true
+  - name: bunx
+    abbr: bnx
+    snippet: bunx
