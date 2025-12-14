@@ -20,3 +20,6 @@ local.code-workspace
 
 # Snyk Vulnerability Scanner Extension
 .dccache
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.github/instructions/snyk_rules.instructions.md
