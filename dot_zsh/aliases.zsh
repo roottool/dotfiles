@@ -1,5 +1,10 @@
 # shellcheck disable=SC2148
 
+# updates
+alias brewu='brew update && brew upgrade && brew autoremove && brew cleanup'
+alias miseu='mise upgrade'
+alias updates='brewu && miseu'
+
 # eza
 alias ll="eza -l -h -@ -mU --icons --git --time-style=long-iso --color=automatic --group-directories-first"
 alias l="ll -aa"
