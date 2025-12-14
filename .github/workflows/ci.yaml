@@ -95,8 +95,8 @@ jobs:
 
   gatekeeper:
     name: Merge Gatekeeper
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
+    runs-on: ubuntu-slim
+    timeout-minutes: 2
     needs: [markdown-lint, test]
     if: ${{ !(failure() || contains(needs.*.result, 'cancelled')) }}
     steps:
