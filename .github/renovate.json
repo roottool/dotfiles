@@ -10,12 +10,15 @@
 	"prHourlyLimit": 4,
 	"prConcurrentLimit": 10,
 	"configMigration": true,
+  "minimumReleaseAge": "3 days",
 	"packageRules": [
-		{
-			"groupName": "GitHub Action digests",
-			"matchDepTypes": ["action"],
-			"pinDigests": true,
-			"automerge": true
-		}
+    {
+      "groupName": "GitHub Action digests",
+      "matchDepTypes": [
+        "action"
+      ],
+      "pinDigests": true,
+      "automerge": true
+    }
 	]
 }
