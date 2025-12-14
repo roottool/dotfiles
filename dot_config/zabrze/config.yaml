@@ -3,6 +3,16 @@ abbrevs:
   - name: git
     abbr: g
     snippet: git
+  - name: git fetch
+    abbr: f
+    snippet: fetch
+    context: '^git\s'
+    global: true
+  - name: git status
+    abbr: s
+    snippet: status
+    context: '^git\s'
+    global: true
   - name: git branch
     abbr: b
     snippet: branch
@@ -16,6 +26,31 @@ abbrevs:
   - name: git checkout
     abbr: ch
     snippet: checkout
+    context: '^git\s'
+    global: true
+  - name: git checkout -b
+    abbr: chb
+    snippet: checkout -b
+    context: '^git\s'
+    global: true
+  - name: git switch
+    abbr: sw
+    snippet: switch
+    context: '^git\s'
+    global: true
+  - name: git switch -c
+    abbr: swc
+    snippet: switch -c
+    context: '^git\s'
+    global: true
+  - name: git switch -t
+    abbr: swt
+    snippet: switch -t
+    context: '^git\s'
+    global: true
+  - name: git switch -
+    abbr: sw-
+    snippet: switch -
     context: '^git\s'
     global: true
   - name: git commit
