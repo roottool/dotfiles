@@ -36,7 +36,7 @@ jobs:
         if: ${{ github.event.pull_request.user.type != 'Bot' && toJSON(github.event.pull_request.assignees) == '[]' }}
         run: gh pr edit $NUMBER --add-assignee $ASSIGNEE
       - name: Checkout Repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
       - name: Check diff targets by path filters
@@ -56,14 +56,14 @@ jobs:
     if: ${{ needs.setup.outputs.markdown == 'true' }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
           sparse-checkout: |
             ${{ needs.setup.outputs.markdown_files }}
           sparse-checkout-cone-mode: false
       - name: Lint
-        uses: DavidAnson/markdownlint-cli2-action@b4c9feab76d8025d1e83c653fa3990936df0e6c8 #v16.0.0
+        uses: DavidAnson/markdownlint-cli2-action@07035fd053f7be764496c0f8d8f9f41f98305101 # v22.0.0
         with:
           globs: ${{ needs.setup.outputs.markdown_files }}
 
@@ -74,7 +74,7 @@ jobs:
     needs: [setup]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
       - name: ShellCheck
@@ -87,7 +87,7 @@ jobs:
     needs: [lint]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           persist-credentials: false
       - name: Install dotfiles
