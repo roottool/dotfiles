@@ -69,6 +69,10 @@ sudo apt install -y \
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew bundle --file ./Brewfile
 
+## Install mise
+/bin/bash -c "$(curl https://mise.run | sh)"
+mise install
+
 # Change the default shell to zsh
 sudo sh -c "echo '/home/linuxbrew/.linuxbrew/bin/zsh' >> /etc/shells"
 chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
