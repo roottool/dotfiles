@@ -36,7 +36,7 @@ jobs:
         if: ${{ github.event.pull_request.user.type != 'Bot' && toJSON(github.event.pull_request.assignees) == '[]' }}
         run: gh pr edit $NUMBER --add-assignee $ASSIGNEE
       - name: Checkout Repository
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
       - name: Check diff targets by path filters
@@ -56,7 +56,7 @@ jobs:
     if: ${{ needs.setup.outputs.markdown == 'true' }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
           sparse-checkout: |
@@ -74,7 +74,7 @@ jobs:
     needs: [setup]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
       - name: ShellCheck
@@ -87,7 +87,7 @@ jobs:
     needs: [lint]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
       - name: Install dotfiles
