@@ -8,6 +8,8 @@ README.md
 CODEOWNERS
 
 .serena
+AGENTS.md
+CLAUDE.md
 
 # VS Code
 ## Workspace file for local
