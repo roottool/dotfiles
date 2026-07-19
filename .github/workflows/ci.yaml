@@ -21,7 +21,8 @@ jobs:
     outputs:
       markdown: ${{ steps.filter.outputs.markdown }}
       markdown_files: ${{ steps.filter.outputs.markdown_files }}
-      shellscripts: ${{ steps.filter.outputs.shellscripts }}
+      shellscript: ${{ steps.filter.outputs.shellscript }}
+      shellscript_files: ${{ steps.filter.outputs.shellscript }}
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Assign yourself to this PR
@@ -44,10 +45,12 @@ jobs:
           filters: |
             markdown:
               - '**/*.md'
-            shellscripts:
+            shellscript:
               - '**/*.sh'
               - '**/*.zsh'
-              - 'dot_z*'
+              - 'dot_profile'
+              - 'dot_zprofile'
+              - 'dot_zsh*'
               - '!examples/*'
 
   lint:
@@ -61,16 +64,16 @@ jobs:
         with:
           persist-credentials: false
       - name: Setup shfmt
-        if: ${{ needs.setup.outputs.shellscripts == 'true' }}
+        if: ${{ needs.setup.outputs.shellscript == 'true' }}
         uses: mfinelli/setup-shfmt@a25fda4c1fe115aec0f85e04126610841bc3141d # v4.0.1
         with:
           shfmt-version: "3.13.1"
       - parallel:
         - name: Check formatting (shfmt)
-          if: ${{ needs.setup.outputs.shellscripts == 'true' }}
+          if: ${{ needs.setup.outputs.shellscript == 'true' }}
           run: find . -type f \( -name 'dot_z*' -o -name '*.sh' -o -name '*.zsh' \) | grep -Ev 'examples/*' | xargs shfmt -d
         - name: ShellCheck
-          if: ${{ needs.setup.outputs.shellscripts == 'true' }}
+          if: ${{ needs.setup.outputs.shellscript == 'true' }}
           run: find . -type f \( -name 'dot_z*' -o -name '*.sh' -o -name '*.zsh' \) | grep -Ev 'examples/*' | xargs shellcheck
         - name: Markdown lint
           if: ${{ needs.setup.outputs.markdown == 'true' }}
