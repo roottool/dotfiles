@@ -2,10 +2,9 @@ name: "Auto Assign"
 run-name: "${{ github.workflow }} (${{ github.ref_name }}): ${{ github.event.pull_request.title }}"
 on:
   pull_request:
-    types:
-      - opened
-      - reopened
-      - ready_for_review
+    types: [opened, reopened, ready_for_review]
+
+permissions: {}
 
 defaults:
   run:
