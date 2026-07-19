@@ -75,6 +75,12 @@ jobs:
           persist-credentials: false
       - name: ShellCheck
         run: find . -type f \( -name 'dot_z*' -o -name '*.sh' -o -name '*.zsh' \) | grep -Ev 'examples/*' | xargs shellcheck
+      - name: Setup shfmt
+        uses: mfinelli/setup-shfmt@a25fda4c1fe115aec0f85e04126610841bc3141d # v4.0.1
+        with:
+          shfmt-version: "3.13.1"
+      - name: Check formatting (shfmt)
+        run: find . -type f \( -name 'dot_z*' -o -name '*.sh' -o -name '*.zsh' \) | grep -Ev 'examples/*' | xargs shfmt -d
 
   test:
     name: Test
