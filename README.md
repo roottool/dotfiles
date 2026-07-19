@@ -23,6 +23,15 @@ This dotfiles repository is intended to be used for Debian or Ubuntu under WSL2.
 - [mise](https://mise.jdx.dev)
 - [Docker](https://www.docker.com)
 
+## 📦 Package management policy
+
+This repository uses two package managers with distinct roles:
+
+- **[Homebrew](https://brew.sh)** ([`Brewfile`](Brewfile)): system-level tools, build dependencies, and CLI tools that don't need per-project version pinning (e.g. `gcc`, `cmake`, `sheldon`, `starship`, `zsh`).
+- **[mise](https://mise.jdx.dev)** ([`dot_config/mise/config.toml.tmpl`](dot_config/mise/config.toml.tmpl)): language runtimes and CLI tools that benefit from version management (e.g. `node`, `rust`, `eza`, `ripgrep`, `fzf`).
+
+When adding a new tool, prefer mise if it's a versioned runtime or a tool you might want to pin per-project; use Homebrew otherwise.
+
 ## 🔰 How to use
 
 1. Clone this repository
@@ -43,6 +52,9 @@ This dotfiles repository is intended to be used for Debian or Ubuntu under WSL2.
    ```
 
 6. Reboot your distribution
+
+   mise-managed tools (see "Package management policy" above) become available automatically once the install script finishes running `mise install`; no manual `mise trust` step is needed since the config lives in the global `~/.config/mise/config.toml`.
+
 7. Make a GPG key for GitHub.
 
    If you want to manipulate Git in the GUI within VS Code, do the following.

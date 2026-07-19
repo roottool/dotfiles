@@ -100,6 +100,10 @@ jobs:
           persist-credentials: false
       - name: Install dotfiles
         run: sh -c "$(curl -fsLS chezmoi.io/get)" -- init --source-path . --apply
+      - name: Validate rendered mise config
+        run: |
+          test -f "$HOME/.config/mise/config.toml"
+          python3 -c "import tomllib; tomllib.load(open('$HOME/.config/mise/config.toml', 'rb'))"
 
   gatekeeper:
     name: Merge Gatekeeper
