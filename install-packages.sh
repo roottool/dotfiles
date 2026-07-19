@@ -71,7 +71,6 @@ brew bundle --file ./Brewfile
 
 ## Install mise
 /bin/bash -c "$(curl https://mise.run | sh)"
-mise install
 
 # Change the default shell to zsh
 sudo sh -c "echo '/home/linuxbrew/.linuxbrew/bin/zsh' >> /etc/shells"
@@ -79,6 +78,9 @@ chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
 
 # Set up by Chezmoi
 chezmoi init --source-path . --apply
+
+# Install mise-managed tools (requires ~/.config/mise/config.toml rendered by chezmoi apply above)
+mise install
 
 # Create the flag file to indicate the script has been executed
 touch "$FLAG_FILE"

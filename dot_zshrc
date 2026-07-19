@@ -19,12 +19,10 @@ fi
 ## sheldon
 eval "$(sheldon source)"
 
-## eza
+## Homebrew completions
 if type brew &>/dev/null; then
-  export FPATH="/home/linuxbrew/.linuxbrew/bin/eza/completions/zsh:$FPATH"
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-  autoload -Uz compinit
-  compinit
+  export FPATH
 fi
 
 ## fzf
