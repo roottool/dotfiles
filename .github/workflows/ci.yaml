@@ -2,11 +2,7 @@ name: CI
 run-name: '${{ github.workflow }} (${{ github.ref_name }}): ${{ github.event.pull_request.title }}'
 on:
   pull_request:
-    types:
-      - opened
-      - synchronize
-      - reopened
-      - ready_for_review
+    types: [opened, synchronize, reopened, ready_for_review]
 
 # Declare default permissions as read only.
 permissions: read-all
