@@ -54,7 +54,13 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
+      - name: Setup shfmt
+        uses: mfinelli/setup-shfmt@a25fda4c1fe115aec0f85e04126610841bc3141d # v4.0.1
+        with:
+          shfmt-version: "3.13.1"
       - parallel:
+        - name: Check formatting (shfmt)
+          run: find . -type f \( -name 'dot_z*' -o -name '*.sh' -o -name '*.zsh' \) | grep -Ev 'examples/*' | xargs shfmt -d
         - name: ShellCheck
           run: find . -type f \( -name 'dot_z*' -o -name '*.sh' -o -name '*.zsh' \) | grep -Ev 'examples/*' | xargs shellcheck
         - name: Markdown lint
