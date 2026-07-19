@@ -37,10 +37,10 @@ This dotfiles repository is intended to be used for Debian or Ubuntu under WSL2.
 4. Move to the cloned repository
 5. Execute the install script
 
-    ```bash
-    chmod +x install-packages.sh
-    ./install-packages.sh
-    ```
+   ```bash
+   chmod +x install-packages.sh
+   ./install-packages.sh
+   ```
 
 6. Reboot your distribution
 7. Make a GPG key for GitHub.
@@ -50,10 +50,10 @@ This dotfiles repository is intended to be used for Debian or Ubuntu under WSL2.
 8. Download [Gpg4win](https://www.gpg4win.org/)
 9. Create `~/.gnupg/gpg-agent.conf`
 
-    ```bash
-    touch ~/.gnupg/gpg-agent.conf
-    gpg-connect-agent reloadagent /bye
-    ```
+   ```bash
+   touch ~/.gnupg/gpg-agent.conf
+   gpg-connect-agent reloadagent /bye
+   ```
 
 10. Reboot a gpg agent
 
