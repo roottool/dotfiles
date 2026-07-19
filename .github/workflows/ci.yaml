@@ -103,7 +103,6 @@ jobs:
     runs-on: ubuntu-slim
     timeout-minutes: 2
     needs: [test]
-    if: ${{ !(failure() || contains(needs.*.result, 'cancelled')) }}
+    if: always() && (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled'))
     steps:
-      - name: Exit with success
-        run: exit 0
+      - run: exit 1
