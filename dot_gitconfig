@@ -13,4 +13,4 @@
   autosquash = true
   updateRefs = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
