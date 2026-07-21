@@ -2,6 +2,7 @@
 examples/
 
 .shellcheckrc
+dprint.json
 install-packages.sh
 LICENSE
 README.md
