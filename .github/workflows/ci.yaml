@@ -86,7 +86,7 @@ jobs:
               globs: ${{ needs.setup.outputs.markdown_files }}
           - name: Check formatting (dprint)
             if: ${{ needs.setup.outputs.dprint == 'true' }}
-            uses: dprint/check@06e1a587a762d4e06663c3e3d46afedc93d9f185 # v2.4
+            uses: dprint/check@7dc032d8874778fc024f6f9b4a7e6d896782c330 # v2.5
 
   test:
     name: Test
