@@ -81,7 +81,7 @@ jobs:
             run: find . -type f \( -name 'dot_profile' -o -name 'dot_z*' -o -name '*.sh' -o -name '*.zsh' \) | grep -Ev 'examples/*' | xargs shellcheck
           - name: Markdown lint
             if: ${{ needs.setup.outputs.markdown == 'true' }}
-            uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff # v24.2.0
+            uses: DavidAnson/markdownlint-cli2-action@696eb3f2509270d7b882d2aa68347bc676e7af34 # v25.0.0
             with:
               globs: ${{ needs.setup.outputs.markdown_files }}
           - name: Check formatting (dprint)
